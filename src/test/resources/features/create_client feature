@@ -1,0 +1,22 @@
+Feature: Create Client
+
+ A new client need to be created for each portfolio.
+
+  Rule: A new client must have a valid name and email
+     @wip
+     Scenario Outline: Client needs to provide all the mandatory fields.
+       Given no client exists for with email of "<email>"
+       When a new client is created with the following details:
+         | email      |  firstName   |  lastName|
+         | <email>    | <firstName>  | <lastName>|
+
+      Examples:
+      | email             | firstName | lastName| Client can be created|
+      | homer@simpson.com | Homer     | Simpson | Yes |
+      |                   | Homer     | Simpson | No  |
+      | homer@simpson.com |           | Simpson | No  |
+      |                   |   Homer   | Simpson |     |
+
+
+
+
